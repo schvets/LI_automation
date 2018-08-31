@@ -1,6 +1,5 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +9,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
-import java.util.TimerTask;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
@@ -19,10 +17,14 @@ import static com.codeborne.selenide.Selenide.refresh;
 public class Main {
 
     @Test
-    public void start() throws InterruptedException {
+    public void testDownload() throws InterruptedException {
         String email = "admin";
         String password = "admin";
+
+        // you must set up your own credential from Linkedin account
+
         Configuration.browser = CustomWebDriverProvider.class.getName();
+//        Configuration.headless = true;
         ChromeDriverManager.getInstance().setup();
         open("https://www.linkedin.com/");
         $x("//input[@class='login-email']").setValue(email);

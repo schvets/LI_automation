@@ -26,8 +26,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 
 public class Main {
-    final String email = "admin";
-    final String password = "admin";
+    final String email = "schvets.a@gmail.com";
+    final String password = "3254411098";
     // you must set up your own credential from Linkedin account
 
     @BeforeTest
@@ -47,7 +47,7 @@ public class Main {
         if (requestButtonVisible()) {
             requestNewArchive();
             setDownloadDataParam();
-            tryDownloadExistedArchive();
+            requestNewArchive();
             submitPasswordPromptIfItVisible();
             tryToDownloadArchiveWithRefresh();
         }
